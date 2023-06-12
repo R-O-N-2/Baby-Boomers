@@ -1,8 +1,8 @@
 const db = require('../db')
-const Brand = require('../models/brandModel')
-const Category = require('../models/categoryModel')
-const Product = require('../models/productModel')
-const Review = require('../models/reviewModel')
+const { Brand } = require('../models')
+const { Category } = require('../models')
+const { Product } = require('../models')
+const { Review } = require('../models')
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
@@ -32,12 +32,12 @@ const main = async () => {
 
     const products = [
         {
-            name: '',
-            category: '',
-            brand: '',
-            capacity: '',
-            description: '',
-            image: ''
+            name: 'Vista V2 Stroller',
+            category: 'stroller',
+            brand: 'UPPAbaby',
+            capacity: '30 lbs (basket)',
+            description: 'The VISTA is designed to grow with families offering multiple configuration options All while strolling like a single. The new VISTA v2 offers design improvements solidifying its positioning as a performance stroller system while Functional upgrades make the lives of parents even easier.',
+            image: 'https://m.media-amazon.com/images/I/81JZU-fsBEL._SX466_.jpg'
         }
     ]
     await Product.insertMany(products)
@@ -46,9 +46,9 @@ const main = async () => {
 
     const reviews = [
         {
-            item: '',
-            comment: '',
-            rating: ''
+            item: 'Vista V2 Stroller',
+            comment: 'Best stroller ever made! Used for all 12 of my kids!',
+            rating: '10/10'
         }
     ]
     await Review.insertMany(reviews)

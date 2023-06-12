@@ -21,8 +21,11 @@ const getProductByName = async (req, res) => {
     }
 }
 
+
+
+
 module.exports = {
     getAllProducts,
-    getProductByName
+    getProductByName,
     
 }
