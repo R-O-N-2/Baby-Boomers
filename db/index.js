@@ -5,7 +5,7 @@ mongoose
     .then(() =>{
         console.log('Succuessfully connected to MongoDB.')
     })
-    .catch(e=> {
+    .catch((e)=> {
         console.error('Connection error', e.message)
     })
 
