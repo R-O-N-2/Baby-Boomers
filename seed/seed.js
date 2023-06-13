@@ -264,7 +264,7 @@ const main = async () => {
 }
 const run = async () => {
     await main()
-    db.close()
+    // db.close() <-- MESSED UP SEEDING PROCESS!
 }
 
 run()
