@@ -1,7 +1,70 @@
 body {
-    background-color: black
+    
+    color: #000000;
+    align-self: center;
+    margin: 75px;
+    background-color: #dbb89c;
+    display: flex;
+    flex-direction: column;
 }
+
+ul {
+    display: inline;
+}
+
+
+
+/* ID'S */
+
 #title {
-    color: white;
     text-align: center;
 }
+
+#navBar1 {}
+
+
+
+/* CLASSE'S */
+
+.catTitles {
+    display: flex;
+    flex-direction: row;
+}
+
+.background {
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPrg2FJsuvWNBfotIYvD_Z-bYRce0_CBkCGg&usqp=CAU');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    outline: 1px solid red;
+    display: flex;
+}
+
+.navigation-container .navBar1 ul, .navBar2 ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    outline: 1px solid green;
+
+}
+
+.navigation-container ul li {
+    outline: 1px solid orange;
+    width: 10rem;
+    height: 3rem;
+
+}
+
+
+/* BUTTONS */
+
+#strollers-button {
+    
+}
+
+
+#carSeats-button {
+    
+}
+
+

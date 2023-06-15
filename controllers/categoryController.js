@@ -1,4 +1,4 @@
-const { Category } = require('../models')
+const { Category, Product } = require('../models')
 
 const getAllCategories = async (req, res) => {
     try {
@@ -12,10 +12,10 @@ const getAllCategories = async (req, res) => {
 
 const getCategoryByName = async (req, res) => {
     try {
-        let searchKey = new RegExp(req.params.name, 'i')
-        const category = await Category.find({name: searchKey}).populate({path: 'products', model: 'Product'})
-        if (!category) throw Error('Category not found')
-        res.status(200).json(brand)
+        let {id} = req.params
+        const productCategory = await Product.find({category: id})
+        if (!productCategory) throw Error('Category not found')
+        res.status(200).json(productCategory)
     } catch (e) {
         res.status(400).send(e.message)
     }

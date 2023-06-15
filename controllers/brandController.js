@@ -1,4 +1,4 @@
-const { Brand } = require('../models')
+const { Brand, Product } = require('../models')
 
 const getAllBrands = async (req, res) => {
     try {
@@ -12,14 +12,15 @@ const getAllBrands = async (req, res) => {
 
 const getBrandByName = async (req, res) => {
     try {
-        let searchKey = new RegExp(req.params.name, 'i')
-        const brand = await Brand.find({name: searchKey}).populate({path: 'products', model: 'Product'})
-        if (!brand) throw Error('Brand not found')
-        res.status(200).json(brand)
+        let {id} = req.params
+        const productBrand = await Product.find({brand: id})
+        if (!productBrand) throw Error('Brand not found')
+        res.status(200).json(productBrand)
     } catch (e) {
         res.status(400).send(e.message)
     }
 }
+
 
 module.exports = {
     getAllBrands,

@@ -3,6 +3,6 @@ const controller = require(`../controllers/categoryController`)
 
 Router
     .get(`/`, controller.getAllCategories)
-    .get(`/:name`, controller.getCategoryByName)
+    .get(`/:id`, controller.getCategoryByName)
 
 module.exports = Router

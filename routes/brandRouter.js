@@ -3,6 +3,6 @@ const controller = require(`../controllers/brandController`)
 
 Router
     .get(`/`, controller.getAllBrands)
-    .get(`/:name`, controller.getBrandByName)
+    .get(`/:id`, controller.getBrandByName)
 
 module.exports = Router

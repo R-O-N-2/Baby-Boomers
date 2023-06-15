@@ -7,12 +7,43 @@
     <title>Baby Boomers</title>
     <link rel="stylesheet" href="./style.css">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="../server.js"></script>
-    <script defer src="./app.js"></script>
+    <script defer src="app.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </head>
 <body>
 
     <h1 id= "title">Baby Boomers!</h1>
+    <div class="navigation-container">
+        <div class = "navBar1"> 
+            <h3 class = catTitles>Categories:</h3>
+            <ul>
+                <li><button id="strollers-button">Strollers</button></li>
+                <li><button id="carSeats-button">Car Seats</button></li>
+                <li><button id="highChairs-button">High Chairs</button></li>
+            </ul>
+        </div>
+
+        <div class = "navBar2">
+            <h3 class = catTitles>Brands:</h3>
+            <ul>
+                <li><button id="uppaBaby-button">UPPAbaby</button></li>
+                <li><button id="doona-button">Doona</button></li>
+                <li><button id="babyZen-button">Babyzen</button></li>
+                <li><button id="chicco-button">Chicco</button></li>
+                <li><button id="graco-button">Graco</button></li>
+                <li><button id="babyTrend-button">Baby Trend</button></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id = "selected-content"></div>
+
+
+    <div class="background"></div>
+
     
+
 </body>
 </html>
