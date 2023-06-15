@@ -1,15 +1,20 @@
 body {
     
-    color: #000000;
+    color: rgb(183, 134, 222);
     align-self: center;
     margin: 75px;
-    background-color: #dbb89c;
+    background-color: skyblue;
     display: flex;
     flex-direction: column;
 }
 
 ul {
     display: inline;
+}
+
+img {
+    height: 300px;
+    width: 220px
 }
 
 
@@ -21,6 +26,16 @@ ul {
 }
 
 #navBar1 {}
+
+#selected-content{
+    padding-top: 50px;
+    display: flex wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    flex-wrap: wrap;
+}
 
 
 
