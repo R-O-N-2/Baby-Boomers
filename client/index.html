@@ -8,43 +8,65 @@
     <link rel="stylesheet" href="./style.css">
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600&family=Pangolin&display=swap" rel="stylesheet">
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script defer src="app.js"></script>
 </head>
 <body>
+    <header>
+        <div id="title">Baby Boomers!</div>
+        
+    </header>
+    <div class="background">       
+        <div class="navigation-container">
+            <!-- <button id="allProducts-button" class="button">View Inventory</button> -->
+            <div class="navBar" id="navBar1"> 
+                <h2>Best seats for your child</h2>
+                <h3 class = catTitles>Categories:</h3>
+                <ul>
+                    <li><button id="strollers-button" class="button">Strollers</button></li>
+                    <li><button id="carSeats-button" class="button">Car Seats</button></li>
+                    <li><button id="highChairs-button" class="button">High Chairs</button></li>
+                </ul>
+            </div>
 
-    <h1 id= "title">Baby Boomers!</h1>
-    <div class="navigation-container">
-        <button id="allProducts-button">View Inventory</button>
-        <div class = "navBar1"> 
-            <h3 class = catTitles>Categories:</h3>
-            <ul>
-                <li><button id="strollers-button">Strollers</button></li>
-                <li><button id="carSeats-button">Car Seats</button></li>
-                <li><button id="highChairs-button">High Chairs</button></li>
-            </ul>
-        </div>
-
-        <div class = "navBar2">
-            <h3 class = catTitles>Brands:</h3>
-            <ul>
-                <li><button id="uppaBaby-button">UPPAbaby</button></li>
-                <li><button id="doona-button">Doona</button></li>
-                <li><button id="babyZen-button">Babyzen</button></li>
-                <li><button id="chicco-button">Chicco</button></li>
-                <li><button id="graco-button">Graco</button></li>
-                <li><button id="babyTrend-button">Baby Trend</button></li>
-            </ul>
+            <div class="navBar" id="navBar2">
+                <h3 class = catTitles>Brands:</h3>
+                <ul>
+                    <li><button id="uppaBaby-button" class="button">UPPAbaby</button></li>
+                    <li><button id="doona-button" class="button">Doona</button></li>
+                    <li><button id="babyZen-button" class="button">Babyzen</button></li>
+                    <li><button id="chicco-button" class="button">Chicco</button></li>
+                    <li><button id="graco-button" class="button">Graco</button></li>
+                    <li><button id="babyTrend-button" class="button">Baby Trend</button></li>
+                </ul>
+            
+                <button id="review-button" class="button">Reviews</button></li>
+            
+                
+                <h2>Write a Review!</h2>
+                <input type="text" id="reviewInput" placeholder="Enter Review Here">
+                <button id="submit-button" onclick="submitReview()">Submit</button>
+  
+        
+  </div>
+            </div>
         </div>
     </div>
-
+    
+        
+    
     <div id = "selected-content"></div>
+
+    
         
 
 
 
-    <div class="background"></div>
+    </div>
 
     
 

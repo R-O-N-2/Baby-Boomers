@@ -1,4 +1,6 @@
-const allProductsButton = document.querySelector('#allProducts-button')
+// const allProductsButton = document.querySelector('#allProducts-button')
+const reviewButton = document.querySelector('#review-button')
+const submitButton = document.querySelector('#submit-button')
 
 // CATEGORY BUTTONS
 const strollersButton = document.querySelector('#strollers-button')
@@ -14,21 +16,23 @@ const gracoButton = document.querySelector('#graco-button')
 const babyTrendButton = document.querySelector('#babyTrend-button')
 
 let selectedContent = document.querySelector('#selected-content')
+let input = document.querySelector('#reviewInput')
+let newReview = input.value
 
-allProductsButton.addEventListener('click', async () => {
-    let allProducts = await axios.get(`http://localhost:3001/api/products`)
-    console.log(allProducts.data)
-    let allProductsArray = allProducts.data
-    allProductsArray.map((everyProduct)=> {
-        selectedContent.innerHTML +=
-    `   <h3>${everyProduct.name}</h3>
-        <h3>${everyProduct.description}</h3>
-        <h3>Capacity: up to ${everyProduct.capacity}</h3>
-        <h3>${everyProduct.price}</h3>
-        <img alt="An image of ${everyProduct.name}." src="${everyProduct.image}"/>
-    `
-    })
-})
+// allProductsButton.addEventListener('click', async () => {
+//     let allProducts = await axios.get(`http://localhost:3001/api/products`)
+//     console.log(allProducts.data)
+//     let allProductsArray = allProducts.data
+//     allProductsArray.map((everyProduct)=> {
+//         selectedContent.innerHTML +=
+//     `   <h3>${everyProduct.name}</h3>
+//         <h3>${everyProduct.description}</h3>
+//         <h3>Capacity: up to ${everyProduct.capacity}</h3>
+//         <h3>${everyProduct.price}</h3>
+//         <img alt="An image of ${everyProduct.name}." src="${everyProduct.image}"/>
+//     `
+//     })
+// })
 
 
 strollersButton.addEventListener('click', async () => {
@@ -37,7 +41,7 @@ strollersButton.addEventListener('click', async () => {
     let strollersArray= strollers.data
     strollersArray.map((stroller)=>{
         selectedContent.innerHTML += 
-    `   <h3>${stroller.name}</h3>
+    `   <h2>${stroller.name}</h2>
         <h3>${stroller.description}</h3>
         <h3>Capacity: up to ${stroller.capacity}</h3>
         <h3>${stroller.price}</h3>
@@ -53,7 +57,7 @@ carSeatsButton.addEventListener('click', async () => {
     let carSeatsArray = carSeats.data
     carSeatsArray.map((carSeat)=> {
         selectedContent.innerHTML +=
-    `   <h3>${carSeat.name}</h3>
+    `   <h2>${carSeat.name}</h2>
         <h3>${carSeat.description}</h3>
         <h3>Capacity: up to ${carSeat.capacity}</h3>
         <h3>${carSeat.price}</h3>
@@ -69,7 +73,7 @@ highChairsButton.addEventListener('click', async () => {
     let highChairsArray = highChairs.data
     highChairsArray.map((highChair)=> {
         selectedContent.innerHTML +=
-    `   <h3>${highChair.name}</h3>
+    `   <h2>${highChair.name}</h2>
         <h3>${highChair.description}</h3>
         <h3>Capacity: up to ${highChair.capacity}</h3>
         <h3>${highChair.price}</h3>
@@ -85,7 +89,7 @@ uppaBabyButton.addEventListener('click', async () => {
     let uppaBabyArray = uppaBaby.data
     uppaBabyArray.map((product)=> {
         selectedContent.innerHTML +=
-    `   <h3>${product.name}</h3>
+    `   <h2>${product.name}</h2>
         <h3>${product.description}</h3>
         <h3>Capacity: up to ${product.capacity}</h3>
         <h3>${product.price}</h3>
@@ -101,7 +105,7 @@ doonaButton.addEventListener('click', async () => {
     let doonaArray = doona.data
     doonaArray.map((product)=> {
         selectedContent.innerHTML +=
-    `   <h3>${product.name}</h3>
+    `   <h2>${product.name}</h2>
         <h3>${product.description}</h3>
         <h3>Capacity: up to ${product.capacity}</h3>
         <h3>${product.price}</h3>
@@ -117,7 +121,7 @@ babyZenButton.addEventListener('click', async () => {
     let babyZenArray = babyZen.data
     babyZenArray.map((product)=> {
         selectedContent.innerHTML +=
-    `   <h3>${product.name}</h3>
+    `   <h2>${product.name}</h2>
         <h3>${product.description}</h3>
         <h3>Capacity: up to ${product.capacity}</h3>
         <h3>${product.price}</h3>
@@ -133,7 +137,7 @@ chiccoButton.addEventListener('click', async () => {
     let chiccoArray = chicco.data
     chiccoArray.map((product)=> {
         selectedContent.innerHTML +=
-    `   <h3>${product.name}</h3>
+    `   <h2>${product.name}</h2>
         <h3>${product.description}</h3>
         <h3>Capacity: up to ${product.capacity}</h3>
         <h3>${product.price}</h3>
@@ -149,7 +153,7 @@ gracoButton.addEventListener('click', async () => {
     let gracoArray = graco.data
     gracoArray.map((product)=> {
         selectedContent.innerHTML +=
-    `   <h3>${product.name}</h3>
+    `   <h2>${product.name}</h2>
         <h3>${product.description}</h3>
         <h3>Capacity: up to ${product.capacity}</h3>
         <h3>${product.price}</h3>
@@ -164,7 +168,7 @@ babyTrendButton.addEventListener('click', async () => {
     let babyTrendArray = babyTrend.data
     babyTrendArray.map((product)=> {
         selectedContent.innerHTML +=
-    `   <h3>${product.name}</h3>
+    `   <h2>${product.name}</h2>
         <h3>${product.description}</h3>
         <h3>Capacity: up to ${product.capacity}</h3>
         <h3>${product.price}</h3>
@@ -172,3 +176,28 @@ babyTrendButton.addEventListener('click', async () => {
     `
     })
 })
+
+
+reviewButton.addEventListener('click', async () => {
+    let reviews = await axios.get('http://localhost:3001/api/reviews')
+    console.log(reviews.data)
+    let reviewsArray = reviews.data.reviews  
+    reviewsArray.map((review)=> {
+        selectedContent.innerHTML +=
+    `   <ul><li><h3>Anonymous User:  ${review.comment}</h3></li>
+        <li><h4>Rating: ${review.rating}</h4></li></ul>
+    `
+    })
+})
+
+submitButton.addEventListener('click', async () => {    
+    let reviews = await axios.post('http://localhost:3001/api/reviews')
+    console.log(reviews.data)
+    let reviewsArray = reviews.data.reviews
+    reviewsArray.appendChild((newReview)=>{
+        selectedContent.innerHTML +=
+        `<ul><li><h3>Anonymous User:  ${newReview.comment}</h3></li>
+        <li><h4>Rating:  ${newReview.rating}</h4>/li></ul>`
+    })
+})
+    

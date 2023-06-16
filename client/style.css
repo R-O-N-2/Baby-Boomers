@@ -1,85 +1,160 @@
 body {
-    
     color: rgb(183, 134, 222);
-    align-self: center;
-    margin: 75px;
+    align-items: center;
+    margin: 10px 10px 5px 10px;
     background-color: skyblue;
-    display: flex;
+    display: flex-wrap;
     flex-direction: column;
+    list-style-type: none;
+    /* padding: 0 100px; */
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+footer {
+    margin-left: 100px;
+    margin-top: 50px;
 }
 
 ul {
-    display: inline;
+    max-width: 70vmax;
 }
 
 img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     height: 300px;
-    width: 220px
+    width: 240px;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 30px;
 }
 
+h1 {
+    font-size: 70px;
+}
 
+h2 {
+    margin-left: 20px;
+    align-items: center;
+}
 
 /* ID'S */
-
 #title {
     text-align: center;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 70px;
 }
 
-#navBar1 {}
+.background {
+    background-image: url('https://static.vecteezy.com/system/resources/previews/016/896/446/original/baby-shower-invitation-with-cute-twin-boy-holding-milk-bottle-sitting-with-teddy-bear-paper-art-cloudscape-crescent-moon-star-on-blue-background-card-with-copy-space-for-baby-s-photo-vector.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid lightpink;
+    display: flex;
+    margin: 25px 100px 25px 100px;
+    /* padding: 100px */
+}
+
+#navBar {
+    display: flex;
+    flex-direction: row;
+    border: 2px solid pink;
+    font-family: 'Montserrat', sans-serif;
+    justify-content: space-around;
+    font-size: 15px;
+    padding: 5px;
+    list-style: none;
+}
 
 #selected-content{
+    margin-left: 100px;
+    margin-right: 100px;
     padding-top: 50px;
-    display: flex wrap;
+    display: block;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: flex-start; */
     align-items: center;
     gap: 5px;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 }
 
-
-
-/* CLASSE'S */
-
-.catTitles {
+#reviewButtons {
     display: flex;
     flex-direction: row;
 }
 
-.background {
-    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPrg2FJsuvWNBfotIYvD_Z-bYRce0_CBkCGg&usqp=CAU');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    outline: 1px solid red;
+/* CLASSE'S */
+
+.catTitles {
+    padding: 0px 0px 0px 20px;
     display: flex;
+    flex-direction: row;
+    align-content: space-around;
 }
+
 
 .navigation-container .navBar1 ul, .navBar2 ul{
     list-style-type: none;
     display: flex;
     flex-direction: row;
-    outline: 1px solid green;
-
+    align-content: space-evenly;
+    outline: 3px solid lightpink;
 }
 
-.navigation-container ul li {
-    outline: 1px solid orange;
+
+.navigation-container ul li { 
     width: 10rem;
     height: 3rem;
-
+    display: inline;
+    padding: 5px;
 }
 
+.hide {
+    display: none;
+}
 
+.button {
+    display: flex;
+    align-items: center;
+    color: lightpink;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+button {
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: pink;
+}
+
+#review-button {
+    margin-left: 40px;
+}
 /* BUTTONS */
 
-#strollers-button {
-    
+#reviewInput {
+    margin-left: 40px;
+    margin-bottom: 20px;
+    align-items: center;
 }
 
 
-#carSeats-button {
-    
+
+
+
+@media only screen and (max-width: 600px) {
+    body {
+      background-color: lightblue;
+      font-size: .75em;
+    }
 }
 
+img {
+    max-width: 400px;
+    max-height: 400px; 
+    position: relative;
+}
 
+.background .navBar1 .navBar2{
+    position: relative;
+}
